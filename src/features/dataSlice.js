@@ -7,7 +7,7 @@ const initialState = {
 }
 
 export const reqCities = createAsyncThunk('req/city', async (searchTerm) => {
-    const response = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=TjZzaACT8BOQT8KxIcjjvFz9FpYwMsxJ&q=${searchTerm}&language=en-US`);
+    const response = await axios.get(`https://dataservice.accuweather.com/locations/v1/cities/search?apikey=TjZzaACT8BOQT8KxIcjjvFz9FpYwMsxJ&q=${searchTerm}&language=en-US`);
     //response[0].EnglishName;
     // .Key
     // .Country.EnglishName
@@ -25,7 +25,7 @@ export const reqCities = createAsyncThunk('req/city', async (searchTerm) => {
 })
 
 export const reqWeather = createAsyncThunk('reqWeather/city', async (key) => {
-    const response = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=%09TjZzaACT8BOQT8KxIcjjvFz9FpYwMsxJ&details=true`);
+    const response = await axios.get(`https://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=%09TjZzaACT8BOQT8KxIcjjvFz9FpYwMsxJ&details=true`);
     return response.data[0];
    
     // const weatherDetails = {
